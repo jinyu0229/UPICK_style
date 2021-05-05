@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./CSS_style/css/reset.css">
+    <link rel="stylesheet" href="./CSS_style/css/style.css">
+    <link rel="stylesheet" href="./CSS_style/js/style_js.js">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    
+    <style>
+
+        body{
+            background-color: #383E44;
+        }
+
+        /* 會員登入Tab */
+        #memLoginTab_HC {
+            width: 300px;
+            height: 400px;
+            /* border: 1px solid #CCC; */
+            margin: 0 auto;
+            margin-top: 150px;            
+        }
+
+        #memLoginTab_HC>ul {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        #memLoginTab_HC>ul>li {
+            /* display: inline-block; */
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        #memLoginTab_HC>ul>li a {
+            text-decoration: none;
+            display: block;
+            color: #E4E8EE;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* Tab切換效果 */
+        /* #memLoginTab_HC>ul>li.active {            
+            color: #7FE0DC;
+            background-color: #7FE0DC;
+        } */
+
+        /* 輸入框標題 */
+        #memLoginTab_HC>.tabCon_HC>p {
+            clear: both;
+            color: #7FE0DC;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* 輸入框 */
+        #memLoginTab_HC>.tabCon_HC>input{
+            width: 300px;
+            height: 40px;
+            border-radius: 25px;
+            box-shadow: none;
+            outline: none;
+            border: 2px solid #E4E8EE;
+            background: none;
+            padding-left: 15px;
+            color: #FFF;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: .5s;
+        }
+
+        #memLoginTab_HC>.tabCon_HC>input:focus{
+            border: 2px solid #7FE0DC;
+        }
+
+        /* 忘記密碼 */
+        .forgetArea_HC{
+            width: 300px;
+            height: 30px;
+            position: relative;
+        }
+
+        .forget_HC{
+            font-size: 14px;
+            color: #7FE0DC;
+            text-decoration: underline;
+            position: absolute;
+            right: 0;
+        }
+        .forget_HC:hover{
+            color: #7FE0DC;
+        }
+
+        /* 登入、加入按鈕 */
+        button{
+            box-shadow: none;
+            outline: none;
+        }
+
+        .btnShare_HC{
+            width: 300px;
+            height: 35px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        /* 快速登入 */
+        #quickLog_HC{
+            display: flex;
+            /* justify-content: space-between; */
+            margin-top: 20px;
+        }
+
+        #quickLog_HC a{
+            width: 150px;
+            display: block;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .FB_HC{
+            border-right: 1px solid #FFF;
+        }
+
+        i{
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        /* 同意條款 */
+        .check_HC{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .check_HC input[type="checkbox"]{
+            background: none;
+            border-radius: 1px solid #7FE0DC;
+            margin-right: 5px;
+            color: #7FE0DC;
+        }
+        .check_HC input[type="checkbox"]:checked{
+            background: url(https://i.imgur.com/JWm4WKA.png) no-repeat left top;
+        }
+        .check_HC a,p{
+            color: #7FE0DC;
+            font-size: 12px;
+            line-height: 22px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="memLoginTab_HC">
+            <ul class="tabTitle_HC">
+                <li><a href="#tab01">會員登入</a></li>
+                <li><a href="#tab02_HC">加入會員</a></li>
+            </ul>
+            <!-- 會員登入 -->
+            <div id="tab01" class="tabCon_HC">
+                <p>帳號</p>
+                <input type="text" placeholder="請輸入信箱">
+                <p>密碼</p>
+                <input type="password" placeholder="請輸入密碼">
+                <div class="forgetArea_HC">
+                    <a class="forget_HC" href="#">忘記密碼</a>
+                </div>                
+                <button class="wBtnNGr btnShare_HC">登入</button>
+                <div id="quickLog_HC">
+                    <a href="#" class="FB_HC"><i class="fab fa-facebook-f"></i>使用Facebook登入</a>
+                    <a href="#"><i class="fab fa-google"></i>使用Google登入</a>
+                </div>
+            </div>
+            <!-- 加入會員 -->
+            <div id="tab02_HC" class="tabCon_HC">
+                <p>帳號</p>
+                <input type="text" placeholder="請輸入信箱">
+                <p>密碼</p>
+                <input type="password" placeholder="請輸入密碼">
+                <p>確認密碼</p>
+                <input type="password" placeholder="請再次輸入密碼">
+                <label class="check_HC">
+                    <input type="checkbox"><p>我同意 UPICK 的 <a href="#">《服務條款》</a>、<a href="#">《隱私權政策》</a>。</p>
+                </label>
+                <button class="wBtnNGr btnShare_HC">加入會員</button>
+                <div id="quickLog_HC">
+                    <a href="#" class="FB_HC"><i class="fab fa-facebook-f"></i>使用Facebook登入</a>
+                    <a href="#"><i class="fab fa-google"></i>使用Google登入</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var $li = $('ul.tabTitle_HC li');
+            var $a = $('ul.tabTitle_HC li a');
+            $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tabCon_HC').hide();
+
+            $li.click(function () {
+                $($(this).find('a').attr('href')).show().siblings('.tabCon_HC').hide();
+                // $(this).addClass('active').siblings('.active').removeClass('active');
+            });
+
+            
+        });
+    </script>
+</body>
+
+</html>
