@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改密碼</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./CSS_style/css/reset.css">
+    <link rel="stylesheet" href="./CSS_style/css/style.css">
+    <link rel="stylesheet" href="./CSS_style/js/style_js.js">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <style>
+        * {
+            outline: 1px solid #CCC;
+        }
+
+        .memberCen_HC {
+            margin-top: 150px;
+            display: flex;
+        }
+
+        /* 左側Menu */
+        .memLeftMenuTitle_HC>p {
+            color: #FFF;
+            font-size: 28px;
+            font-weight: 700;
+            display: block;
+            margin: 20px;
+        }
+
+        .memLeftMenu_HC {
+            width: 250px;
+            height: 700px;
+            background-color: #383E44;
+            border-radius: 0 8px 8px 0;
+            margin-right: 20px;
+        }
+
+        .memLeftMenu_HC>ul>li>a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            height: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            padding-left: 40px;
+            line-height: 50px;
+            transition: .4s;
+        }
+
+        .memLeftMenu_HC>ul>li>a:hover {
+            background-color: #7FE0DC;
+            color: #383E44;
+        }
+
+        .memLeftMenu_HC>ul>li>a.memChange_HC {
+            background-color: #7FE0DC;
+            color: #383E44;
+        }
+
+        /* 右邊區域 */
+        .memRightCon {
+            width: 930px;
+        }
+
+        /* 標題樣式 */
+        .memberTitle_HC {
+            width: 165px;
+            height: 40px;
+            display: flex;
+            border-bottom: 2px solid #383E44;
+            position: relative;
+        }
+
+        .memberTitleText_HC {
+            margin-right: 10px;
+        }
+
+        .memSquareBox_HC {
+            display: flex;
+            position: absolute;
+            left: 150px;
+        }
+
+        .memSquare01_HC {
+            width: 5px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+            margin-right: 5px;
+        }
+
+        .memSquare02_HC {
+            width: 10px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+        }
+
+        form {
+            width: 360px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .memAccount_HC {
+            padding-left: 15px;
+        }
+
+        .memColumn_HC>p {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .memColumn_HC>input {
+            width: 360px;
+            height: 40px;
+            border-radius: 4px;
+            box-shadow: none;
+            outline: none;
+            border: 2px solid #E4E8EE;
+            background: none;
+            padding: 15px;
+            color: #383E44;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: .5s;
+        }
+
+        .memColumn_HC>input:focus {
+            border: 2px solid #7FE0DC;
+        }
+
+        /* 按鈕樣式 */
+        .memEditPassBtnShare_HC {
+            display: block;
+            width: 130px;
+            height: 35px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="memberCen_HC">
+            <!-- 左側Menu -->
+            <div class="memLeftMenu_HC">
+                <ul>
+                    <li class="memLeftMenuTitle_HC">
+                        <p>會員中心</p>
+                    </li>
+                    <li><a href="./memberEdit.html">會員資料</a></li>
+                    <li><a href="./memberEditPass.html" class="memChange_HC">修改密碼</a></li>
+                    <li><a href="">查詢訂單</a></li>
+                    <li><a href="">追蹤清單</a></li>
+                    <li><a href="">分店資訊</a></li>
+                    <li><a href="">服務條款</a></li>
+                    <li><a href="">隱私權政策</a></li>
+                    <li><a href="">客服中心</a></li>
+                </ul>
+            </div>
+            <!-- 右側內容 -->
+            <div class="memRightCon">
+                <div class="memberTitle_HC">
+                    <h1 class="memberTitleText_HC">修改密碼</h1>
+                    <div class="memSquareBox_HC">
+                        <div class="memSquare01_HC"></div>
+                        <div class="memSquare02_HC"></div>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="memColumn_HC">
+                        <p>舊密碼</p>
+                        <input type="password" placeholder="請輸入舊密碼">
+                    </div>
+                    <div class="memColumn_HC">
+                        <p>新密碼</p>
+                        <input type="password" placeholder="請輸入新密碼">
+                    </div>
+                    <div class="memColumn_HC">
+                        <p>確認新密碼</p>
+                        <input type="password" placeholder="請輸入市話號碼">
+                    </div>
+                    <button class="wBtnNGr memEditPassBtnShare_HC">確認修改</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+</html>
