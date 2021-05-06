@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./CSS_style/css/reset.css">
+    <link rel="stylesheet" href="./CSS_style/css/style.css">
+    <link rel="stylesheet" href="./CSS_style/js/style_js.js">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <style>
+        /* * {
+            outline: 1px solid #CCC;
+        } */
+
+        .memberCen_HC {
+            margin-top: 150px;
+        }
+
+        /* 標題樣式 */
+        .memberTitle_HC {
+            width: 165px;
+            height: 40px;
+            display: flex;
+            border-bottom: 2px solid #383E44;
+            position: relative;
+        }
+
+        .memberTitleText_HC {
+            margin-right: 10px;
+        }
+
+        .memSquareBox_HC {
+            display: flex;
+            position: absolute;
+            left: 150px;
+        }
+
+        .memSquare01_HC {
+            width: 5px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+            margin-right: 5px;
+        }
+
+        .memSquare02_HC {
+            width: 10px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+        }
+
+        /* 會員中心功能入口按鈕 */
+        .memberCardGroup_HC {
+            width: 650px;
+            margin: 0 auto;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .memberCard_HC {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .memberCard_HC>a {
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .memberCard_HC>a>i {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #7FE0DC;
+            font-size: 60px;
+            text-align: center;
+            color: #fff;
+            line-height: 150px !important;
+            transition: .4s;
+        }
+
+        .memberCard_HC>a>h3 {
+            transition: .4s;
+        }
+
+        .memberCard_HC:hover>a>h3 {
+            color: #4AC8C2;
+        }
+
+        .memberCard_HC:hover>a>i {
+            background-color: #4AC8C2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="memberCen_HC">
+            <div class="memberTitle_HC">
+                <h1 class="memberTitleText_HC">會員中心</h1>
+                <div class="memSquareBox_HC">
+                    <div class="memSquare01_HC"></div>
+                    <div class="memSquare02_HC"></div>
+                </div>
+            </div>
+            <div class="memberCardGroup_HC">
+                <div class="memberCard_HC">
+                    <a href="./memberEdit.html"><i class="fas fa-user-edit"></i>
+                        <h3>會員資料</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-user-lock"></i>
+                        <h3>修改密碼</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-list-alt"></i>
+                        <h3>查詢訂單</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-heart"></i>
+                        <h3>追蹤清單</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-store"></i>
+                        <h3>分店資訊</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-user-shield"></i>
+                        <h3>服務條款</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-user-shield"></i>
+                        <h3>隱私權政策</h3>
+                    </a>
+                </div>
+                <div class="memberCard_HC">
+                    <a href="#"><i class="fas fa-question"></i>
+                        <h3>客服中心</h3>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+</html>
