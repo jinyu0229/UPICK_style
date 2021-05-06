@@ -1,0 +1,32 @@
+{
+  "name": "jquery-twzipcode",
+  "title": "jQuery TWzipcode",
+  "description": "建立三碼臺灣郵遞區號下拉清單的 jQuery Plugin - 讀取快速、不需資料庫。",
+  "version": "1.7.15-rc1",
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/essoduke/jquery-twzipcode.git"
+  },
+  "author": "Essoduke Chang (https://essoduke.org)",
+  "licenses": "MIT",
+  "files": [
+    "jquery.twzipcode.min.js",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "main": "jquery.twzipcode.js",
+  "bugs": {
+    "url": "https://github.com/essoduke/jQuery-TWzipcode/issues"
+  },
+  "homepage": "https://code.essoduke.org/twzipcode/",
+  "dependencies": {
+    "jquery": ">=1.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
