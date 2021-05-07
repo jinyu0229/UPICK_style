@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員資料</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS_style/css/reset.css">
     <link rel="stylesheet" href="./CSS_style/css/style.css">
     <link rel="stylesheet" href="./CSS_style/js/style_js.js">
     <link href="./fontawesome/css/all.css" rel="stylesheet">
     <style>
-        * {
+        /* * {
             outline: 1px solid #CCC;
+        } */
+
+        .container {
+            padding: 0;
         }
 
         .memberCen_HC {
@@ -72,6 +76,7 @@
             display: flex;
             border-bottom: 2px solid #383E44;
             position: relative;
+            margin-bottom: 20px;
         }
 
         .memberTitleText_HC {
@@ -103,7 +108,6 @@
         form {
             width: 360px;
             margin: 0 auto;
-            margin-top: 20px;
         }
 
         .memAccount_HC {
@@ -162,6 +166,16 @@
             font-weight: 700;
             margin: 0 auto;
         }
+
+        button {
+            box-shadow: none;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        button:focus {
+            outline: none;
+        }
     </style>
 </head>
 
@@ -176,12 +190,12 @@
                     </li>
                     <li><a href="./memberEdit.html" class="memChange_HC">會員資料</a></li>
                     <li><a href="./memberEditPass.html">修改密碼</a></li>
-                    <li><a href="">查詢訂單</a></li>
-                    <li><a href="">追蹤清單</a></li>
-                    <li><a href="">分店資訊</a></li>
+                    <li><a href="./memberOrder.html">查詢訂單</a></li>
+                    <li><a href="./memberFollow.html">追蹤清單</a></li>
+                    <li><a href="./memberBranch.html">分店資訊</a></li>
                     <li><a href="">服務條款</a></li>
                     <li><a href="">隱私權政策</a></li>
-                    <li><a href="">客服中心</a></li>
+                    <li><a href="./memberQA.html">客服中心</a></li>
                 </ul>
             </div>
             <!-- 右側內容 -->
