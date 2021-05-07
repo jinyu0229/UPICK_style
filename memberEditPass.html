@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>修改密碼</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS_style/css/reset.css">
     <link rel="stylesheet" href="./CSS_style/css/style.css">
     <link rel="stylesheet" href="./CSS_style/js/style_js.js">
     <link href="./fontawesome/css/all.css" rel="stylesheet">
     <style>
-        * {
+        /* * {
             outline: 1px solid #CCC;
+        } */
+
+        .container {
+            padding: 0;
         }
 
         .memberCen_HC {
@@ -73,6 +77,7 @@
             display: flex;
             border-bottom: 2px solid #383E44;
             position: relative;
+            margin-bottom: 20px;
         }
 
         .memberTitleText_HC {
@@ -103,7 +108,6 @@
         form {
             width: 360px;
             margin: 0 auto;
-            margin-top: 20px;
         }
 
         .memAccount_HC {
@@ -135,11 +139,11 @@
         }
 
         /* 顯示隱藏密碼 */
-        .memLoginPassword_HC{
+        .memLoginPassword_HC {
             position: relative;
         }
 
-        .memPassIcon_HC{
+        .memPassIcon_HC {
             position: absolute;
             margin-left: -35px;
             margin-top: 12px;
@@ -156,6 +160,16 @@
             font-weight: 700;
             margin: 0 auto;
         }
+
+        button {
+            box-shadow: none;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        button:focus {
+            outline: none;
+        }
     </style>
 </head>
 
@@ -170,12 +184,12 @@
                     </li>
                     <li><a href="./memberEdit.html">會員資料</a></li>
                     <li><a href="./memberEditPass.html" class="memChange_HC">修改密碼</a></li>
-                    <li><a href="">查詢訂單</a></li>
-                    <li><a href="">追蹤清單</a></li>
-                    <li><a href="">分店資訊</a></li>
+                    <li><a href="./memberOrder.html">查詢訂單</a></li>
+                    <li><a href="./memberFollow.html">追蹤清單</a></li>
+                    <li><a href="./memberBranch.html">分店資訊</a></li>
                     <li><a href="">服務條款</a></li>
                     <li><a href="">隱私權政策</a></li>
-                    <li><a href="">客服中心</a></li>
+                    <li><a href="./memberQA.html">客服中心</a></li>
                 </ul>
             </div>
             <!-- 右側內容 -->
@@ -191,17 +205,20 @@
                     <div class="memColumn_HC memOldPassword_HC">
                         <p>舊密碼</p>
                         <input id="memOldPassword_HC" type="password" placeholder="請輸入舊密碼" name="password">
-                        <i toggle="#memOldPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleOldPassword_HC"></i>
+                        <i toggle="#memOldPassword_HC"
+                            class="far fa-eye-slash memPassIcon_HC memToggleOldPassword_HC"></i>
                     </div>
                     <div class="memColumn_HC memNewPassword_HC">
                         <p>新密碼</p>
                         <input id="memNewPassword_HC" type="password" placeholder="請輸入新密碼" name="password">
-                        <i toggle="#memNewPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleNewPassword_HC"></i>
+                        <i toggle="#memNewPassword_HC"
+                            class="far fa-eye-slash memPassIcon_HC memToggleNewPassword_HC"></i>
                     </div>
                     <div class="memColumn_HC memCheckPassword_HC">
                         <p>確認新密碼</p>
                         <input id="memCheckPassword_HC" type="password" placeholder="請再次輸入新密碼" name="password">
-                        <i toggle="#memCheckPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleCheckPassword_HC"></i>
+                        <i toggle="#memCheckPassword_HC"
+                            class="far fa-eye-slash memPassIcon_HC memToggleCheckPassword_HC"></i>
                     </div>
                     <button class="wBtnNGr memEditPassBtnShare_HC">確認修改</button>
                 </form>
@@ -217,35 +234,35 @@
 <script>
     // 隱藏顯示舊密碼
     $(".memToggleOldPassword_HC").click(function () {
-    $(this).toggleClass("fa-eye fa-eye-slash");
-    var input = $($(this).attr("toggle"));
-    if (input.attr("type") == "password") {
-        input.attr("type", "text");
-    }
-    else {
-        input.attr("type", "password");
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        }
+        else {
+            input.attr("type", "password");
         }
     });
     // 隱藏顯示新密碼
     $(".memToggleNewPassword_HC").click(function () {
-    $(this).toggleClass("fa-eye fa-eye-slash");
-    var input = $($(this).attr("toggle"));
-    if (input.attr("type") == "password") {
-        input.attr("type", "text");
-    }
-    else {
-        input.attr("type", "password");
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        }
+        else {
+            input.attr("type", "password");
         }
     });
     // 隱藏顯示確認新密碼
     $(".memToggleCheckPassword_HC").click(function () {
-    $(this).toggleClass("fa-eye fa-eye-slash");
-    var input = $($(this).attr("toggle"));
-    if (input.attr("type") == "password") {
-        input.attr("type", "text");
-    }
-    else {
-        input.attr("type", "password");
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        }
+        else {
+            input.attr("type", "password");
         }
     });
 </script>
