@@ -114,18 +114,18 @@
             padding-left: 15px;
         }
 
-        .memColumn_HC>p {
+        .memColumnWhite_HC>p {
             font-size: 14px;
             font-weight: 700;
         }
 
-        .memColumn_HC>input {
+        .memColumnWhite_HC>input {
             width: 360px;
             height: 40px;
             border-radius: 4px;
             box-shadow: none;
             outline: none;
-            border: 2px solid #E4E8EE;
+            border: 1px solid #9AA3AC;
             background: none;
             padding: 15px;
             color: #383E44;
@@ -134,26 +134,28 @@
             transition: .5s;
         }
 
-        .memColumn_HC>input:focus {
-            border: 2px solid #7FE0DC;
+        .memColumnWhite_HC>input:focus {
+            border: 1px solid #7FE0DC;
         }
 
         /* 地址樣式 */
         #zipcode2 {
-            width: 360px;
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
         }
 
-        .form-control {
-            padding: 10px;
+        .memChooseAdd_HC{
             width: 170px;
             height: 40px;
-            outline: none;
-            box-shadow: none;
-            border: 2px solid #E4E8EE;
+            border: 1px solid #9AA3AC;
             border-radius: 4px;
+            padding: 10px;
+            font-size: 14px;     
+        }
+
+        .memChooseAdd_HC:focus{
+            outline: none;
         }
 
         /* 按鈕樣式 */
@@ -193,8 +195,8 @@
                     <li><a href="./memberOrder.html">查詢訂單</a></li>
                     <li><a href="./memberFollow.html">追蹤清單</a></li>
                     <li><a href="./memberBranch.html">分店資訊</a></li>
-                    <li><a href="">服務條款</a></li>
-                    <li><a href="">隱私權政策</a></li>
+                    <li><a href="./memService.html">服務條款</a></li>
+                    <li><a href="./memPrivacyPolicy.html">隱私權政策</a></li>
                     <li><a href="./memberQA.html">客服中心</a></li>
                 </ul>
             </div>
@@ -208,27 +210,27 @@
                     </div>
                 </div>
                 <form action="">
-                    <div class="memColumn_HC">
+                    <div class="memColumnWhite_HC">
                         <p>會員帳號</p>
                         <p class="memAccount_HC">XiaoMing@gmail.com</p>
                     </div>
-                    <div class="memColumn_HC">
+                    <div class="memColumnWhite_HC">
                         <p>姓名</p>
                         <input type="text" placeholder="請輸入姓名">
                     </div>
-                    <div class="memColumn_HC">
+                    <div class="memColumnWhite_HC">
                         <p>生日</p>
                         <input type="date">
                     </div>
-                    <div class="memColumn_HC">
+                    <div class="memColumnWhite_HC">
                         <p>手機號碼</p>
                         <input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請輸入手機號碼">
                     </div>
-                    <div class="memColumn_HC">
+                    <div class="memColumnWhite_HC">
                         <p>市話號碼</p>
                         <input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請輸入市話號碼">
                     </div>
-                    <div class="memColumn_HC">
+                    <div class="memColumnWhite_HC">
                         <p>地址</p>
                         <div id="zipcode2"></div>
                         <input type="text" placeholder="請輸入詳細地址">
@@ -249,7 +251,7 @@
 
     $("#zipcode2").twzipcode({
         zipcodeIntoDistrict: true, // 郵遞區號自動顯示在地區
-        css: ["city form-control", "town form-control"], // 自訂 "城市"、"地區" class 名稱
+        css: ["city memChooseAdd_HC", "town memChooseAdd_HC"], // 自訂 "城市"、"地區" class 名稱
         countyName: "city", // 自訂城市 select 標籤的 name 值
         districtName: "town" // 自訂地區 select 標籤的 name 值
     });
