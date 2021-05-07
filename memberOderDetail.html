@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂單明細</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS_style/css/reset.css">
+    <link rel="stylesheet" href="./CSS_style/css/style.css">
+    <link rel="stylesheet" href="./CSS_style/js/style_js.js">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <style>
+        /* * {
+            outline: 1px solid #CCC;
+        } */
+
+        .container {
+            padding: 0;
+        }
+
+        .memberCen_HC {
+            margin-top: 150px;
+            display: flex;
+        }
+
+        /* 左側Menu */
+        .memLeftMenuTitle_HC>p {
+            color: #FFF;
+            font-size: 28px;
+            font-weight: 700;
+            display: block;
+            margin: 20px;
+        }
+
+        .memLeftMenu_HC {
+            width: 250px;
+            height: 700px;
+            background-color: #383E44;
+            border-radius: 0 8px 8px 0;
+            margin-right: 20px;
+        }
+
+        .memLeftMenu_HC>ul>li>a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            height: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            padding-left: 40px;
+            line-height: 50px;
+            transition: .4s;
+        }
+
+        .memLeftMenu_HC>ul>li>a:hover {
+            background-color: #7FE0DC;
+            color: #383E44;
+        }
+
+        .memLeftMenu_HC>ul>li>a.memChange_HC {
+            background-color: #7FE0DC;
+            color: #383E44;
+        }
+
+        /* 右邊區域 */
+        .memRightCon {
+            width: 930px;
+        }
+
+        /* 標題樣式 */
+        .memberTitle_HC {
+            width: 165px;
+            height: 40px;
+            display: flex;
+            border-bottom: 2px solid #383E44;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .memberTitleText_HC {
+            margin-right: 10px;
+        }
+
+        .memSquareBox_HC {
+            display: flex;
+            position: absolute;
+            left: 150px;
+        }
+
+        .memSquare01_HC {
+            width: 5px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+            margin-right: 5px;
+        }
+
+        .memSquare02_HC {
+            width: 10px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+        }
+
+        /* 表格樣式 */
+        table {
+            border-bottom: 2px solid #383E44;
+        }
+
+        #memWebTable_HC>thead>tr>th.memProductNam_HC {
+            width: 630px;
+        }
+
+        th:first-child {
+            border-top-left-radius: 4px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 4px;
+        }
+
+        #memWebTable_HC>thead>tr>th {
+            width: 110px;
+            height: 40px;
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 40px;
+            background-color: #383E44;
+            text-align: center;
+        }
+
+        #memWebTable_HC>tbody>tr {
+            height: 50px;
+            border-bottom: 1px solid #E4E8EE;
+        }
+
+        #memWebTable_HC>tbody>tr:hover {
+            background-color: #F5F6F8;
+        }
+
+        #memWebTable_HC>tbody>tr>td {
+            text-align: center;
+            font-size: 14px;
+            /* line-height: 50px; */
+        }
+
+        #memWebTable_HC>tbody>tr>td.memProductNam_HC {
+            text-align: left;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+
+        #memWebTable_HC>tbody>tr>td>p {
+            line-height: 50px;
+            color: #383E44;
+        }
+
+        #memWebTable_HC>tbody>tr>td>a {
+            color: #4AC8C2;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .memTotal_HC {
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            background-color: #383E44;
+            border-radius: 0 0 4px 4px;
+            padding-right: 10px;
+            margin-bottom: 20px;
+        }
+
+        .memTotal_HC>p {
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFF;
+            line-height: 40px;
+        }
+
+        .memTotal_HC>p.memDetailPrice_HC {
+            color: #FD723C;
+
+        }
+
+        /* 按鈕樣式 */
+        .memDetailBtnShare_HC {
+            display: block;
+            width: 130px;
+            height: 35px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 auto;
+        }
+
+        button {
+            box-shadow: none;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="memberCen_HC">
+            <!-- 左側Menu -->
+            <div class="memLeftMenu_HC">
+                <ul>
+                    <li class="memLeftMenuTitle_HC">
+                        <p>會員中心</p>
+                    </li>
+                    <li><a href="./memberEdit.html">會員資料</a></li>
+                    <li><a href="./memberEditPass.html">修改密碼</a></li>
+                    <li><a href="./memberOrder.html" class="memChange_HC">查詢訂單</a></li>
+                    <li><a href="./memberFollow.html">追蹤清單</a></li>
+                    <li><a href="./memberBranch.html">分店資訊</a></li>
+                    <li><a href="">服務條款</a></li>
+                    <li><a href="">隱私權政策</a></li>
+                    <li><a href="./memberQA.html">客服中心</a></li>
+                </ul>
+            </div>
+            <!-- 右側內容 -->
+            <div class="memRightCon">
+                <div class="memberTitle_HC">
+                    <h1 class="memberTitleText_HC">訂單明細</h1>
+                    <div class="memSquareBox_HC">
+                        <div class="memSquare01_HC"></div>
+                        <div class="memSquare02_HC"></div>
+                    </div>
+                </div>
+                <!-- 訂單明細 -->
+                <h4>訂單編號：1006127192</h4>
+                <table id="memWebTable_HC">
+                    <thead>
+                        <tr>
+                            <th class="memProductNam_HC">商品名稱</th>
+                            <th>單價</th>
+                            <th>數量</th>
+                            <th>小計</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="memProductNam_HC">
+                                <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
+                            </td>
+                            <td>
+                                <p>$24,798</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <p>$24,798</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="memProductNam_HC">
+                                <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
+                            </td>
+                            <td>
+                                <p>$24,798</p>
+                            </td>
+                            <td>
+                                <p>1</p>
+                            </td>
+                            <td>
+                                <p>$24,798</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="memTotal_HC">
+                    <p>訂單總額：</p>
+                    <p class="memDetailPrice_HC">$24,798</p>
+                </div>
+                <button onclick="self.location.href='./memberOrder.html'"
+                    class="wBtnNGr memDetailBtnShare_HC">回訂單列表</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+</html>
