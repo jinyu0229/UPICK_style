@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員登入</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS_style/css/reset.css">
     <link rel="stylesheet" href="./CSS_style/css/style.css">
     <link rel="stylesheet" href="./CSS_style/js/style_js.js">
@@ -15,6 +15,10 @@
     <style>
         body {
             background-color: #383E44;
+        }
+
+        .container {
+            padding: 0;
         }
 
         /* 會員登入Tab */
@@ -46,6 +50,11 @@
             height: 30px;
             text-align: center;
             line-height: 30px;
+            transition: .4s;
+        }
+
+        .memTabTitle_HC>a:hover {
+            color: #7FFFE1;
         }
 
         .memActive_HC {
@@ -82,11 +91,11 @@
         }
 
         /* 顯示隱藏密碼 */
-        .memLoginPassword_HC{
+        .memLoginPassword_HC {
             position: relative;
         }
 
-        .memPassIcon_HC{
+        .memPassIcon_HC {
             position: absolute;
             margin-left: -35px;
             margin-top: 12px;
@@ -117,6 +126,10 @@
             box-shadow: none;
             outline: none;
             margin-bottom: 10px;
+        }
+
+        button:focus {
+            outline: none;
         }
 
         .memBtnShare_HC {
@@ -267,15 +280,17 @@
                 <div class="memColumn_HC memRegisterPassword_HC">
                     <p>密碼</p>
                     <input id="memRegisterPassword_HC" type="password" placeholder="請輸入密碼" name="password">
-                    <i toggle="#memRegisterPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleRegisterPassword_HC"></i>
+                    <i toggle="#memRegisterPassword_HC"
+                        class="far fa-eye-slash memPassIcon_HC memToggleRegisterPassword_HC"></i>
                 </div>
                 <div class="memColumn_HC memRegisterCheckPassword_HC">
                     <p>確認密碼</p>
                     <input id="memRegisterCheckPassword_HC" type="password" placeholder="請再次輸入密碼" name="password">
-                    <i toggle="#memRegisterCheckPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleRegisterCheckPassword_HC"></i>
+                    <i toggle="#memRegisterCheckPassword_HC"
+                        class="far fa-eye-slash memPassIcon_HC memToggleRegisterCheckPassword_HC"></i>
                     <span><i class="fas fa-exclamation-circle"></i>密碼不符！</span>
                 </div>
-                
+
                 <label class="memCheck_HC">
                     <input type="checkbox">
                     <p>我同意 UPICK 的 <a href="#">《服務條款》</a>、<a href="#">《隱私權政策》</a>。</p>
@@ -300,7 +315,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script>
-    // Tab切換
+    // 登入註冊Tab切換
     function openClass(evt, className) {
         var i, x, memTablink_HCs;
         x = document.getElementsByClassName("memTabClass_HC");
