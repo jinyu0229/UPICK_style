@@ -116,6 +116,7 @@
             border-radius: 8px;
             box-shadow: 3px 3px 10px #E4E8EE;
             padding: 40px;
+            margin-bottom: 70px;
         }
 
         .memTermsArea_HC>ul>li>p{
@@ -160,6 +161,89 @@
             color: #FFF;
             text-decoration: none;
         }
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 右側內容 */
+            .memRightCon_HC{
+                width: 355px;
+            }
+
+            .memTermsArea_HC{
+                width: 355px;
+                margin-top: 60px;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC{
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+        }
     </style>
 </head>
 
@@ -179,12 +263,17 @@
                     <li><a href="./memberBranch.html">分店資訊</a></li>
                     <li><a href="./memService.html" >服務條款</a></li>
                     <li><a href="./memPrivacyPolicy.html" class="memChange_HC">隱私權政策</a></li>
-                    <li><a href="./memberQA.html">常見問題</a></li>
+                    <li><a href="./memberQA.html">客服中心</a></li>
                 </ul>
             </div>
             <!-- 右側內容 -->
             <div class="memRightCon">
                 <div class="memberTitle_HC">
+                    <div class="memBackBtn_HC">
+                        <a href="./memberCentre.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
                     <h1 class="memberTitleText_HC">隱私權政策</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
