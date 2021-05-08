@@ -17,6 +17,10 @@
             outline: 1px solid #CCC;
         } */
 
+        body{
+            background-color: #F5F6F8;
+        }
+
         .container {
             padding: 0;
         }
@@ -105,6 +109,15 @@
         }
 
         /* 表單樣式 */
+        .memEditArea_HC{
+            width: 910px;
+            margin: 0 auto;
+            background-color: #FFF;
+            border-radius: 8px;
+            box-shadow: 3px 3px 10px #E4E8EE;
+            padding: 20px;
+        }
+
         form {
             width: 360px;
             margin: 0 auto;
@@ -178,6 +191,98 @@
         button:focus {
             outline: none;
         }
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+                
+            }
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                position: fixed;
+                left: 0;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 右側內容 */
+            .memRightCon_HC{
+                width: 355px;
+            }
+
+            /* 表單樣式 */
+            .memEditArea_HC{
+                width: 355px;
+                margin-top: 60px;
+                margin-bottom: 70px;
+            }
+
+            form{
+                width: 300px;
+            }
+
+            .memColumnWhite_HC>input{
+                width: 300px;
+            }
+
+            /* 地址樣式 */
+            #zipcode2{
+                width: 300px;
+            }
+
+            .memChooseAdd_HC{
+                width: 140px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+        }
     </style>
 </head>
 
@@ -203,40 +308,47 @@
             <!-- 右側內容 -->
             <div class="memRightCon_HC">
                 <div class="memberTitle_HC">
-                    <h1 class="memberTitleText_HC">資料修改</h1>
+                    <div class="memBackBtn_HC">
+                        <a href="./memberCentre.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
+                    <h1 class="memberTitleText_HC">會員資料</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
                         <div class="memSquare02_HC"></div>
                     </div>
                 </div>
-                <form action="">
-                    <div class="memColumnWhite_HC">
-                        <p>會員帳號</p>
-                        <p class="memAccount_HC">XiaoMing@gmail.com</p>
-                    </div>
-                    <div class="memColumnWhite_HC">
-                        <p>姓名</p>
-                        <input type="text" placeholder="請輸入姓名">
-                    </div>
-                    <div class="memColumnWhite_HC">
-                        <p>生日</p>
-                        <input type="date">
-                    </div>
-                    <div class="memColumnWhite_HC">
-                        <p>手機號碼</p>
-                        <input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請輸入手機號碼">
-                    </div>
-                    <div class="memColumnWhite_HC">
-                        <p>市話號碼</p>
-                        <input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請輸入市話號碼">
-                    </div>
-                    <div class="memColumnWhite_HC">
-                        <p>地址</p>
-                        <div id="zipcode2"></div>
-                        <input type="text" placeholder="請輸入詳細地址">
-                    </div>
-                    <button class="wBtnNGr memEditBtnShare_HC">確認修改</button>
-                </form>
+                <div class="memEditArea_HC">
+                    <form action="">
+                        <div class="memColumnWhite_HC">
+                            <p>會員帳號</p>
+                            <p class="memAccount_HC">XiaoMing@gmail.com</p>
+                        </div>
+                        <div class="memColumnWhite_HC">
+                            <p>姓名</p>
+                            <input type="text" placeholder="請輸入姓名">
+                        </div>
+                        <div class="memColumnWhite_HC">
+                            <p>生日</p>
+                            <input type="date">
+                        </div>
+                        <div class="memColumnWhite_HC">
+                            <p>手機號碼</p>
+                            <input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請輸入手機號碼">
+                        </div>
+                        <div class="memColumnWhite_HC">
+                            <p>市話號碼</p>
+                            <input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="請輸入市話號碼">
+                        </div>
+                        <div class="memColumnWhite_HC">
+                            <p>地址</p>
+                            <div id="zipcode2"></div>
+                            <input type="text" placeholder="請輸入詳細地址">
+                        </div>
+                        <button class="wBtnNGr memEditBtnShare_HC">確認修改</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
