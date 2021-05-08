@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>重設密碼</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS_style/css/reset.css">
     <link rel="stylesheet" href="./CSS_style/css/style.css">
     <link rel="stylesheet" href="./CSS_style/js/style_js.js">
@@ -17,7 +17,11 @@
             background-color: #383E44;
         }
 
-        #memForget_HC {
+        .container {
+            padding: 0;
+        }
+
+        #memReset_HC {
             width: 500px;
             height: 400px;
             margin: 0 auto;
@@ -46,7 +50,7 @@
         .memColumn_HC>p {
             clear: both;
             color: #7FFFE1;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
         }
 
@@ -89,6 +93,10 @@
             margin-bottom: 10px;
         }
 
+        button:focus {
+            outline: none;
+        }
+
         .memBtnShare_HC {
             width: 300px;
             height: 35px;
@@ -98,14 +106,18 @@
         }
 
         /* 錯誤提示 */
-        span {
+        .memErroCSS_HC>i,p {
             color: #FF8888;
             font-size: 12px;
             display: block;
             margin-bottom: 5px;
         }
 
-        span>i {
+        .memCheckErro_HC{
+            display: none;
+        }
+
+        .memErroCSS_HC>i {
             font-size: 12px;
             margin-right: 5px;
         }
@@ -129,41 +141,104 @@
             margin-top: 0;
             margin-bottom: 20px;
         }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            #memReset_HC {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+                margin-top: 150px;
+            }
+
+            /* 輸入框標題 */
+            .memColumn_HC>p{
+                font-size: 14px;
+            }
+
+            /* 註冊成功彈跳窗樣式 */
+            .windowShare_HC{
+                width: 320px;
+            }
+            .wWinDarkClo {
+                margin-left: 88%;
+                margin-top: 5px;
+            }
+            .wSucceDarkTick {
+                line-height: 0;
+                height: 60px;
+            }
+        }
     </style>
 
 </head>
 
 <body>
     <div class="container">
-        <div id="memForget_HC">
+        <div id="memReset_HC">
             <div class="memTitle_HC">
                 <h1 class="">重設密碼</h1>
             </div>
             <div class="memRestPassCon_HC">
                 <div class="memColumn_HC memRestPassword_HC">
                     <p>密碼</p>
-                    <input id="memRestPassword_HC" type="password" placeholder="請輸入密碼" name="password">
+                    <input onkeyup="checkPass()" id="memRestPassword_HC" type="password" placeholder="請輸入密碼" name="password" class="memCheckPswrd1_HC">
                     <i toggle="#memRestPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleRestPassword_HC"></i>
                 </div>
                 <div class="memColumn_HC memCheckRestPassword_HC">
                     <p>確認密碼</p>
-                    <input id="memCheckRestPassword_HC" type="password" placeholder="請再次輸入密碼" name="password">
+                    <input onkeyup="checkPass()" id="memCheckRestPassword_HC" type="password" placeholder="請再次輸入密碼" name="password" class="memCheckPswrd2_HC">
                     <i toggle="#memCheckRestPassword_HC" class="far fa-eye-slash memPassIcon_HC memToggleCheckRestPassword_HC"></i>
-                    <span><i class="fas fa-exclamation-circle"></i>密碼不符！</span>
+                    <div class="memErroCSS_HC memCheckErro_HC">
+                        <i class="fas fa-exclamation-circle"> 密碼不符！</i>
+                    </div>
                 </div>
-                <button class="wBtnNGr memBtnShare_HC">送出</button>
+                <button class="wBtnNGr memBtnShare_HC memResetBtn">送出</button>
             </div>
-            <!-- 重設成功彈跳窗 -->
-            <div class="wSucceDark windowShare_HC">
-                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
-                <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
-                <h4>密碼重設成功！</h4>
-            </div>
+        </div>
+        <!-- 重設成功彈跳窗 -->
+        <div class="wSucceDark windowShare_HC">
+            <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+            <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
+            <h4>密碼重設成功！</h4>
         </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script>
+    // 確認密碼
+    const CP1 = document.querySelector('.memCheckPswrd1_HC');
+    const CP2 = document.querySelector('.memCheckPswrd2_HC');
+    const passErro = document.querySelector('.memCheckErro_HC');
+    const passCheck = document.querySelector('.memResetBtn');
+    passCheck.onclick = function(){
+        if(CP1.value != CP2.value){
+            passErro.style.display = "block";
+            CP1.style.borderColor = "#FF8888";
+            CP2.style.borderColor = "#FF8888";
+        }
+        else{
+            passErro.style.display = "none";
+        }
+    }    
+    function checkPass(){
+        if(CP1.value != CP2.value){
+            passErro.style.display = "block";
+            CP1.style.borderColor = "#FF8888";
+            CP2.style.borderColor = "#FF8888";
+        }
+        else{
+            passErro.style.display = "none";
+            CP1.style.borderColor = "#7FFFE1";
+            CP2.style.borderColor = "#7FFFE1";
+        }
+    }
+
     // 顯示隱藏密碼
     $(".memToggleRestPassword_HC").click(function () {
         $(this).toggleClass("fa-eye fa-eye-slash");
