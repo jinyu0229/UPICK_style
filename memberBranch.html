@@ -17,6 +17,10 @@
             outline: 1px solid #CCC;
         } */
 
+        body{
+            background-color: #F5F6F8;
+        }
+
         .container {
             padding: 0;
         }
@@ -106,6 +110,16 @@
         }
 
         /* 地圖樣式 */
+        .memBranchCardArea_HC{
+            width: 910px;
+            margin: 0 auto;
+            background-color: #FFF;
+            border-radius: 8px;
+            box-shadow: 3px 3px 10px #E4E8EE;
+            padding: 20px;
+            margin-bottom: 70px;
+        }
+
         .memBranchCard {
             width: 600px;
             height: 250px;
@@ -144,7 +158,6 @@
             line-height: 60px;
             text-align: center;
             text-decoration: none;
-            position: absolute;
             right: 40px;
             bottom: 40px;
             position: fixed;
@@ -153,6 +166,102 @@
         .memTop_HC:hover{
             color: #FFF;
             text-decoration: none;
+        }
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 右側內容 */
+            .memRightCon_HC{
+                width: 355px;
+            }
+
+            .memBranchCardArea_HC{
+                width: 355px;
+                margin-top: 60px;
+            }
+
+            .memBranchCard{
+                width: 300px;
+                height: 500px;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            iframe{
+                margin-right: 0;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC{
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
         }
     </style>
 </head>
@@ -179,6 +288,11 @@
             <!-- 右側內容 -->
             <div class="memRightCon">
                 <div class="memberTitle_HC">
+                    <div class="memBackBtn_HC">
+                        <a href="./memberCentre.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
                     <h1 class="memberTitleText_HC">分店資訊</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
@@ -186,74 +300,76 @@
                     </div>
                 </div>
                 <!-- 分店資訊 -->
-                <div class="memBranchCard">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.673344249422!2d121.52584611544705!3d25.045157343997197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97ad152f70f%3A0x6546dc141dae7bd5!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5YWr5b636Lev5LiA5q61MeiZnw!5e0!3m2!1szh-TW!2stw!4v1620360705592!5m2!1szh-TW!2stw"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                    <div class="memBranchAdd_HC">
-                        <h4>光華數位店</h4>
-                        <p>
-                            電話：02-8288-8968 <br>
-                            地址：100台北市中正區八德路一段1號<br>
-                            營業時間：10:00~21:00 <br>
-                        </p>
+                <div class="memBranchCardArea_HC">
+                    <div class="memBranchCard">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.673344249422!2d121.52584611544705!3d25.045157343997197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97ad152f70f%3A0x6546dc141dae7bd5!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5YWr5b636Lev5LiA5q61MeiZnw!5e0!3m2!1szh-TW!2stw!4v1620360705592!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                        <div class="memBranchAdd_HC">
+                            <h4>光華數位店</h4>
+                            <p>
+                                電話：02-8288-8968 <br>
+                                地址：100台北市中正區八德路一段1號<br>
+                                營業時間：10:00~21:00 <br>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="memBranchCard">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.67013693314!2d121.52906981544693!3d25.0452661439927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a964a9d32645%3A0x6cbe1c7387579bd7!2zMTAwNTjlj7DljJfluILkuK3mraPljYDluILmsJHlpKfpgZPkuInmrrUy6JmfIOiZn--8jDJG!5e0!3m2!1szh-TW!2stw!4v1620364118311!5m2!1szh-TW!2stw"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                    <div class="memBranchAdd_HC">
-                        <h4>光華數位2店</h4>
-                        <p>
-                            電話：02-8288-8966 <br>
-                            地址：100台北市中正區八德路一段2號2F <br>
-                            營業時間：10:00~21:00 <br>
-                        </p>
+                    <div class="memBranchCard">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.67013693314!2d121.52906981544693!3d25.0452661439927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a964a9d32645%3A0x6cbe1c7387579bd7!2zMTAwNTjlj7DljJfluILkuK3mraPljYDluILmsJHlpKfpgZPkuInmrrUy6JmfIOiZn--8jDJG!5e0!3m2!1szh-TW!2stw!4v1620364118311!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                        <div class="memBranchAdd_HC">
+                            <h4>光華數位2店</h4>
+                            <p>
+                                電話：02-8288-8966 <br>
+                                地址：100台北市中正區八德路一段2號2F <br>
+                                營業時間：10:00~21:00 <br>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="memBranchCard">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.664609827259!2d120.66324231543614!3d24.148413879370676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d9e2fad01ad%3A0x29e43f5e86555103!2zNDAz5Y-w5Lit5biC6KW_5Y2A6Iux5omN6LevNTAx6Jmf!5e0!3m2!1szh-TW!2stw!4v1620364214975!5m2!1szh-TW!2stw"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                    <div class="memBranchAdd_HC">
-                        <h4>台中nova店</h4>
-                        <p>
-                            電話：04-8295-0668 <br>
-                            地址：403台中市西區英才路501號 <br>
-                            營業時間：10:00~21:00 <br>
-                        </p>
+                    <div class="memBranchCard">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.664609827259!2d120.66324231543614!3d24.148413879370676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d9e2fad01ad%3A0x29e43f5e86555103!2zNDAz5Y-w5Lit5biC6KW_5Y2A6Iux5omN6LevNTAx6Jmf!5e0!3m2!1szh-TW!2stw!4v1620364214975!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                        <div class="memBranchAdd_HC">
+                            <h4>台中nova店</h4>
+                            <p>
+                                電話：04-8295-0668 <br>
+                                地址：403台中市西區英才路501號 <br>
+                                營業時間：10:00~21:00 <br>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="memBranchCard">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.8589573296294!2d120.20967481542301!3d22.99221342323072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e768edb38e245%3A0x9579868878b3a6f!2zNzAx5Y-w5Y2X5biC5p2x5Y2A5YyX6ZaA6Lev5LiA5q61MTIw6JmfMg!5e0!3m2!1szh-TW!2stw!4v1620364325238!5m2!1szh-TW!2stw"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                    <div class="memBranchAdd_HC">
-                        <h4>台南北門店</h4>
-                        <p>
-                            電話：06-8968-1324 <br>
-                            地址：700台南市中西區北門路一段120號2樓 <br>
-                            營業時間：10:00~21:00 <br>
-                        </p>
+                    <div class="memBranchCard">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.8589573296294!2d120.20967481542301!3d22.99221342323072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e768edb38e245%3A0x9579868878b3a6f!2zNzAx5Y-w5Y2X5biC5p2x5Y2A5YyX6ZaA6Lev5LiA5q61MTIw6JmfMg!5e0!3m2!1szh-TW!2stw!4v1620364325238!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                        <div class="memBranchAdd_HC">
+                            <h4>台南北門店</h4>
+                            <p>
+                                電話：06-8968-1324 <br>
+                                地址：700台南市中西區北門路一段120號2樓 <br>
+                                營業時間：10:00~21:00 <br>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="memBranchCard">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.4323732651474!2d120.30635431541916!3d22.637662436283385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04f29d0471ef%3A0xf3e652a23f962fa8!2zODA36auY6ZuE5biC5LiJ5rCR5Y2A5bu65ZyL5LqM6LevMTUw6Jmf!5e0!3m2!1szh-TW!2stw!4v1620364406659!5m2!1szh-TW!2stw"
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                    <div class="memBranchAdd_HC">
-                        <h4>高雄建國店</h4>
-                        <p>
-                            電話：07-8394-0842 <br>
-                            地址：807高雄市三民區建國二路150號 <br>
-                            營業時間：10:00~21:00 <br>
-                        </p>
+                    <div class="memBranchCard">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.4323732651474!2d120.30635431541916!3d22.637662436283385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04f29d0471ef%3A0xf3e652a23f962fa8!2zODA36auY6ZuE5biC5LiJ5rCR5Y2A5bu65ZyL5LqM6LevMTUw6Jmf!5e0!3m2!1szh-TW!2stw!4v1620364406659!5m2!1szh-TW!2stw"
+                            style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                        <div class="memBranchAdd_HC">
+                            <h4>高雄建國店</h4>
+                            <p>
+                                電話：07-8394-0842 <br>
+                                地址：807高雄市三民區建國二路150號 <br>
+                                營業時間：10:00~21:00 <br>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
