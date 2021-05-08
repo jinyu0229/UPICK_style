@@ -17,6 +17,10 @@
             outline: 1px solid #CCC;
         } */
 
+        body{
+            background-color: #F5F6F8;
+        }
+
         .container {
             padding: 0;
         }
@@ -103,6 +107,66 @@
         .memberCard_HC:hover>a>i {
             background-color: #4AC8C2;
         }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+                
+            }
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                position: fixed;
+                left: 0;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 會員中心功能入口按鈕 */
+            .memberCardGroup_HC{
+                width: 270px;
+                margin: 0 auto;
+                padding-top: 60px;
+            }
+
+            .memberCard_HC{
+                width: 120px;
+                margin-bottom: 10px;
+            }
+
+            .memberCard_HC>a>i{
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+                line-height: 120px !important;
+            }
+
+            .memberCard_HC>a>h3{
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -158,9 +222,6 @@
                     </a>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 
