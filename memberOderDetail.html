@@ -234,6 +234,176 @@
             color: #FFF;
             text-decoration: none;
         }
+
+        .memMobileDetail_HC{
+            display: none;
+        }
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 取消顯示網頁明細 */
+            .memWebDetail_HC{
+                display: none;
+            }
+
+            /* 手機明細 */
+            .memMobileDetail_HC{
+                display: block;
+                margin-top: 70px;
+            }
+
+            .memDtailTitle_HC{
+                background-color: #383E44;
+                border-radius: 4px 4px 0 0;
+                height: 35px;
+                padding: 0 10px;
+            }
+
+            .memDtailTitle_HC>p{
+                color: #FFF;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 35px;
+            }
+
+            /* 訂單詳細內容 */
+            .memDetailOrderArea_HC{
+                display: flex;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #383E44;
+            }
+
+            .memDetailTitle_HC{
+                width: 100px;
+            }
+
+            .memDetailTitle_HC>li{
+                height: 40px;
+                border-bottom: 1px solid #E4E8EE;
+            }
+
+            .memDetailTitle_HC>li>p{
+                line-height: 40px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .memDetailCon_HC>li{
+                width: 255px;
+                height: 40px;
+                border-bottom: 1px solid #E4E8EE;
+            }
+
+            .memDetailCon_HC>li>p,a{
+                line-height: 40px;
+            }
+
+            .memDetailCon_HC>li>a{
+                font-size: 14px;
+                text-decoration: underline;
+                color: #383E44;
+            }
+
+            /* 明細樣式 */
+            .memDisplayMe_HC{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .memDtailTitleReverse_HC{
+                background-color: #383E44;
+                border-radius: 0 0 4px 4px;
+                height: 35px;
+                padding: 0 10px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .memDtailTitleReverse_HC>p{
+                color: #FFF;
+                font-weight: 700;
+                line-height: 35px;
+            }
+
+            .memDtailTitleReverse_HC>p.memPrice_HC{
+                color: #FD723C;
+            }
+
+            .memDetailTr_HC{
+                padding: 0 10px;
+                border-bottom: 1px solid #E4E8EE;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC{
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+        }
     </style>
 </head>
 
@@ -259,60 +429,145 @@
             <!-- 右側內容 -->
             <div class="memRightCon">
                 <div class="memberTitle_HC">
+                    <div class="memBackBtn_HC">
+                        <a href="./memberOrder.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
                     <h1 class="memberTitleText_HC">訂單明細</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
                         <div class="memSquare02_HC"></div>
                     </div>
                 </div>
-                <!-- 訂單明細 -->
-                <h4>訂單編號：1006127192</h4>
-                <table id="memWebTable_HC">
-                    <thead>
-                        <tr>
-                            <th class="memProductNam_HC">商品名稱</th>
-                            <th>單價</th>
-                            <th>數量</th>
-                            <th>小計</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="memProductNam_HC">
-                                <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                            </td>
-                            <td>
-                                <p>$24,798</p>
-                            </td>
-                            <td>
-                                <p>1</p>
-                            </td>
-                            <td>
-                                <p>$24,798</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="memProductNam_HC">
-                                <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                            </td>
-                            <td>
-                                <p>$24,798</p>
-                            </td>
-                            <td>
-                                <p>1</p>
-                            </td>
-                            <td>
-                                <p>$24,798</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="memTotal_HC">
-                    <p>訂單總額：</p>
-                    <p class="memDetailPrice_HC">$24,798</p>
+                <!-- Web訂單明細 -->
+                <div class="memWebDetail_HC">
+                    <h4>訂單編號：1006127192</h4>
+                    <table id="memWebTable_HC">
+                        <thead>
+                            <tr>
+                                <th class="memProductNam_HC">商品名稱</th>
+                                <th>單價</th>
+                                <th>數量</th>
+                                <th>小計</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="memProductNam_HC">
+                                    <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
+                                </td>
+                                <td>
+                                    <p>$24,798</p>
+                                </td>
+                                <td>
+                                    <p>1</p>
+                                </td>
+                                <td>
+                                    <p>$24,798</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="memProductNam_HC">
+                                    <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
+                                </td>
+                                <td>
+                                    <p>$24,798</p>
+                                </td>
+                                <td>
+                                    <p>1</p>
+                                </td>
+                                <td>
+                                    <p>$24,798</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="memTotal_HC">
+                        <p>訂單總額：</p>
+                        <p class="memDetailPrice_HC">$24,798</p>
+                    </div>
+                    <button onclick="self.location.href='./memberOrder.html'"
+                        class="wBtnNGr memDetailBtnShare_HC">回訂單列表</button>
                 </div>
-                <button onclick="self.location.href='./memberOrder.html'"
-                    class="wBtnNGr memDetailBtnShare_HC">回訂單列表</button>
+                <!-- 手機訂單明細 -->
+                <div class="memMobileDetail_HC">
+                    <div class="memDtailTitle_HC">
+                        <p>訂單編號：1006127192</p>
+                    </div>
+                    <div class="memDetailOrderArea_HC">
+                        <ul class="memDetailTitle_HC">
+                            <li>
+                                <p>購買日期</p>
+                            </li>
+                            <li>
+                                <p>訂單狀態</p>
+                            </li>
+                            <li>
+                                <p>運送狀態</p>
+                            </li>
+                            <li>
+                                <p> 運送方式</p>
+                            </li>
+                            <li>
+                                <p>付款方式</p>
+                            </li>
+                            <li>
+                                <p>訂單總額</p>
+                            </li>
+                            <li>
+                                <p>取消訂單</p>
+                            </li>
+                        </ul>
+                        <ul class="memDetailCon_HC">
+                            <li>
+                                <p>2021-05-01</p>
+                            </li>
+                            <li>
+                                <p>處理中</p>
+                            </li>
+                            <li>
+                                <p>-</p>
+                            </li>
+                            <li>
+                                <p>宅配</p>
+                            </li>
+                            <li>
+                                <p>宅配代收</p>
+                            </li>
+                            <li>
+                                <p>$24,798</p>
+                            </li>
+                            <li>
+                                <a href="./memberQA.html">聯絡客服</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="memDtailTitle_HC">
+                        <p>訂單明細</p>
+                    </div>
+                    <div class="memDetailArea_HC">
+                        <div class="memDetailTr_HC">
+                            <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
+                            <ul class="memDisplayMe_HC">
+                                <li>
+                                    <p>單價：$2,999</p>
+                                </li>
+                                <li>
+                                    <p>數量：1</p>
+                                </li>
+                                <li>
+                                    <p>小計：$2,999</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="memDtailTitleReverse_HC">
+                        <p>訂單總額：</p>
+                        <p class="memPrice_HC">$2,999</p>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
