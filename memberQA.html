@@ -113,6 +113,7 @@
         #memQATab_HC {
             width: 910px;
             margin: 0 auto;
+            margin-bottom: 70px;
         }
 
         .memQATabTitle_HC {
@@ -127,8 +128,6 @@
 
         .memQATabStyle_HC {
             background-color: none;
-            font-weight: 700;
-            font-size: 20px;
             color: #FFF;
         }
 
@@ -276,6 +275,145 @@
         button:focus {
             outline: none;
         }
+
+        /* TOP按鈕樣式 */
+        .memTop_HC{
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-color: #383E44;
+            color: #FFF;
+            border-radius: 50px 50px 0 50px;
+            line-height: 60px;
+            text-align: center;
+            text-decoration: none;
+            right: 40px;
+            bottom: 40px;
+            position: fixed;
+        }
+
+        .memTop_HC:hover{
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 右側內容 */
+            .memRightCon_HC{
+                width: 355px;
+            }
+
+            #memQATab_HC{
+                width: 355px;
+                margin-top: 60px;
+            }
+
+            /* Tab樣式 */
+            .memQATabTitle_HC{
+                padding: 0 5px;
+            }
+            .memQATabTitle_HC>a{
+                font-size: 13px;
+                width: 70px;
+            }
+
+            /* 表單樣式 */
+            .memQAForm_HC{
+                width: 355px;
+            }
+
+            .memQAForm_HC>h3{
+                text-align: center;
+                margin-left: 0;
+            }
+
+            .memQFormArea_HC{
+                width: 300px;
+                display: block;
+            }
+
+            .memColumnWhite_HC>input{
+                width: 300px;
+            }
+            .memTextArea_HC{
+                width: 300px;
+            }
+
+            .memQABox_HC{
+                width: 300px;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC{
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+        }
     </style>
 </head>
 
@@ -301,6 +439,11 @@
             <!-- 右側內容 -->
             <div class="memRightCon">
                 <div class="memberTitle_HC">
+                    <div class="memBackBtn_HC">
+                        <a href="./memberCentre.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
                     <h1 class="memberTitleText_HC">客服中心</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
@@ -455,6 +598,7 @@
         </div>
 
     </div>
+    <a href="javascript:topMove();" class="memTop_HC">Top</a>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -478,6 +622,14 @@
     }
     var QAmybtn = document.getElementsByClassName("memQATestbtn_HC")[0];
     QAmybtn.click();
+
+    // Top
+    function topMove(){
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+        }
 </script>
 
 </html>
