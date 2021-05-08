@@ -19,6 +19,7 @@
 
         .container {
             padding: 0;
+            position: relative;
         }
 
         /* 會員登入Tab */
@@ -27,6 +28,7 @@
             height: 400px;
             margin: 0 auto;
             margin-top: 150px;
+            
         }
 
         /* Tab分頁 */
@@ -39,7 +41,7 @@
         .memTabStyle_HC {
             background: none;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 28px;
             color: #E4E8EE;
         }
 
@@ -66,7 +68,7 @@
         #memLoginTab_HC>.memTabCon_HC>.memColumn_HC>p {
             clear: both;
             color: #7FFFE1;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
         }
 
@@ -189,19 +191,40 @@
             color: #7FFFE1;
             font-size: 12px;
             line-height: 22px;
+            margin-bottom: 0;
         }
 
         /* 錯誤提示 */
-        span {
+        .memErroCSS_HC>i,p {
             color: #FF8888;
             font-size: 12px;
-            display: block;
             margin-bottom: 5px;
         }
 
-        span>i {
+        .memCheckErro_HC{
+            display: none;
+        }
+
+        .memNoInput_HC{
+            display: none;
+        }
+
+        .memErroCSS_HC>i {
             font-size: 12px;
             margin-right: 5px;
+        }
+
+        /* 帳號格式錯誤 */
+        .memErroEmail_HC{
+            display: none;
+        }
+        .memErroEmail2_HC{
+            display: none;
+        }
+
+        /* 未同意 */
+        .memNotCheck_HC{
+            display: none;
         }
 
         /* 註冊成功彈跳窗樣式 */
@@ -222,6 +245,62 @@
         .wSucceDark h4 {
             margin-top: 0;
             margin-bottom: 20px;
+        }
+
+        .memSuccess_HC{
+            display: none;
+            position: absolute;
+            left: 400px;
+            top: 200px;
+            z-index: 99;
+        }
+
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            /* Tab分頁 */
+            #memLoginTab_HC {
+                width: 300px;
+                height: 400px;
+                margin: 0 auto;
+                margin-top: 150px;
+            }
+
+            .memTabStyle_HC{
+                font-size: 24px;
+            }
+
+            /* 輸入框標題 */
+            #memLoginTab_HC>.memTabCon_HC>.memColumn_HC>p{
+                font-size: 14px;
+            }
+
+            /* 註冊成功彈跳窗樣式 */
+            .windowShare_HC{
+                width: 320px;
+            }
+            .wWinDarkClo {
+                margin-left: 88%;
+                margin-top: 5px;
+            }
+            .wSucceDarkTick {
+                line-height: 0;
+                height: 60px;
+            }
+
+            .memSuccess_HC{
+                display: none;
+                position: absolute;
+                left: 18px;
+                top: 200px;
+                z-index: 99;
+            }
         }
     </style>
 
@@ -244,24 +323,30 @@
                 <!-- 帳號 -->
                 <div class="memColumn_HC">
                     <p>帳號</p>
-                    <input type="text" placeholder="請輸入信箱">
-                    <span><i class="fas fa-exclamation-circle"></i>帳號填寫不完整！</span>
-                    <span><i class="fas fa-exclamation-circle"></i>帳號未被註冊！</span>
+                    <input onkeyup="check()" type="text" placeholder="請輸入信箱" class="memEmailCheck_HC">
+                    <div class="memErroCSS_HC memErroEmail_HC">
+                        <i class="fas fa-exclamation-circle"> 帳號格式錯誤！</i>
+                    </div>
+                    <div class="memErroCSS_HC">
+                        <i class="fas fa-exclamation-circle"> 帳號未被註冊！</i>
+                    </div>
                 </div>
                 <!-- 密碼 -->
                 <div class="memColumn_HC memLoginPassword_HC">
                     <p>密碼</p>
-                    <input id="memLoginPassword_HC" type="password" placeholder="請輸入密碼" name="password">
+                    <input id="memLoginPassword_HC" type="password" placeholder="請輸入密碼" name="password" class="memNull2_HC">
                     <i toggle="#memLoginPassword_HC" class="far fa-eye-slash memPassIcon_HC memTogglePassword_HC"></i>
-                    <span><i class="fas fa-exclamation-circle"></i>密碼輸入錯誤！</span>
+                    <div class="memErroCSS_HC">
+                        <i class="fas fa-exclamation-circle"> 密碼輸入錯誤！</i>
+                    </div>
                 </div>
                 <!-- 忘記密碼 -->
                 <div class="memForgetArea_HC">
                     <a class="memForget_HC" href="./forget.html">忘記密碼</a>
                 </div>
                 <!-- 登入按鈕 -->
-                <button class="wBtnNGr memBtnShare_HC">登入</button>
-                <span><i class="fas fa-exclamation-circle"></i>帳號或密碼未輸入！</span>
+                <!-- <button class="wBtnLock memBtnShare_HC">登入</button> -->
+                <button disabled class="wBtnNGr memBtnShare_HC memLoginBtn">登入</button>
                 <div id="memQuickLog_HC">
                     <a href="#" class="memDivider_HC"><i class="fab fa-facebook-f"></i>使用Facebook登入</a>
                     <a href="#"><i class="fab fa-google"></i>使用Google登入</a>
@@ -272,49 +357,113 @@
                 <!-- 帳號 -->
                 <div class="memColumn_HC">
                     <p>帳號</p>
-                    <input type="text" placeholder="請輸入信箱">
-                    <span><i class="fas fa-exclamation-circle"></i>帳號已被註冊過！</span>
-                    <span><i class="fas fa-exclamation-circle"></i>帳號格式錯誤！</span>
+                    <input onkeyup="check2()" type="text" placeholder="請輸入信箱" class="memEmailCheck2_HC memNI_HC">
+                    <div class="memErroCSS_HC">
+                        <i class="fas fa-exclamation-circle"> 帳號已被註冊過！</i>
+                    </div>
+                    <div class="memErroCSS_HC memErroEmail2_HC">
+                        <i class="fas fa-exclamation-circle"> 帳號格式錯誤！</i>
+                    </div>
                 </div>
                 <!-- 密碼 -->
                 <div class="memColumn_HC memRegisterPassword_HC">
                     <p>密碼</p>
-                    <input id="memRegisterPassword_HC" type="password" placeholder="請輸入密碼" name="password">
+                    <!-- 密碼輸入框class -->
+                    <input onkeyup="checkPass()" id="memRegisterPassword_HC" type="password" placeholder="請輸入密碼" name="password" class="memCheckPswrd1_HC">
                     <i toggle="#memRegisterPassword_HC"
                         class="far fa-eye-slash memPassIcon_HC memToggleRegisterPassword_HC"></i>
                 </div>
                 <div class="memColumn_HC memRegisterCheckPassword_HC">
                     <p>確認密碼</p>
-                    <input id="memRegisterCheckPassword_HC" type="password" placeholder="請再次輸入密碼" name="password">
+                    <!-- 確認密碼輸入框class -->
+                    <input onkeyup="checkPass()" id="memRegisterCheckPassword_HC" type="password" placeholder="請再次輸入密碼" name="password" class="memCheckPswrd2_HC">
                     <i toggle="#memRegisterCheckPassword_HC"
                         class="far fa-eye-slash memPassIcon_HC memToggleRegisterCheckPassword_HC"></i>
-                    <span><i class="fas fa-exclamation-circle"></i>密碼不符！</span>
+                    <div class="memErroCSS_HC memCheckErro_HC">
+                        <i class="fas fa-exclamation-circle"> 密碼不符！</i>
+                    </div>
                 </div>
-
                 <label class="memCheck_HC">
-                    <input type="checkbox">
+                    <input type="checkbox" class="memChecking_HC">
                     <p>我同意 UPICK 的 <a href="#">《服務條款》</a>、<a href="#">《隱私權政策》</a>。</p>
                 </label>
-                <button class="wBtnNGr memBtnShare_HC">加入會員</button>
-                <span><i class="fas fa-exclamation-circle"></i>帳號 / 密碼 / 確認密碼 未填寫！</span>
-                <span><i class="fas fa-exclamation-circle"></i>未同意UPICK的《服務條款》、《隱私權政策》！</span>
+                <button class="wBtnNGr memBtnShare_HC memRegisterBtn">加入會員</button>
+                <div class="memErroCSS_HC memNoInput_HC">
+                    <i class="fas fa-exclamation-circle"> 帳號/密碼/確認密碼 未填寫！</i>
+                </div>
+                <div class="memErroCSS_HC memNotCheck_HC">
+                    <i class="fas fa-exclamation-circle"> 未同意UPICK的《服務條款》、《隱私權政策》！</i>
+                </div>
                 <div id="memQuickLog_HC">
                     <a href="#" class="memDivider_HC"><i class="fab fa-facebook-f"></i>使用Facebook登入</a>
                     <a href="#"><i class="fab fa-google"></i>使用Google登入</a>
                 </div>
             </div>
+            <!-- 註冊成功彈跳窗 -->
+            <div class="wSucceDark windowShare_HC memSuccess_HC">
+                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+                <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
+                <h4>註冊成功！<br>歡迎您加入UPICK！</h4>
+            </div>
         </div>
-        <!-- 註冊成功彈跳窗 -->
-        <div class="wSucceDark windowShare_HC">
-            <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
-            <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
-            <h4>註冊成功！<br>歡迎您加入UPICK！</h4>
-        </div>
+        
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script>
+    // 帳號格式錯誤
+    const email = document.querySelector('.memEmailCheck_HC');
+    const email2 = document.querySelector('.memEmailCheck2_HC');
+    const Erro = document.querySelector('.memErroEmail_HC');
+    const Erro2 = document.querySelector('.memErroEmail2_HC');
+    let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    function check(){
+        if(email.value.match(regExp)){
+            email.style.borderColor = "#7FFFE1";
+            Erro.style.display = "none";
+        }else{
+            email.style.borderColor = "#FF8888";
+            Erro.style.display = "block";
+        }
+        if(email.value == ""){
+            email.style.borderColor = "#7FFFE1";
+            Erro.style.display = "none";
+        }
+    }
+    function check2(){
+        if(email2.value.match(regExp)){
+            email2.style.borderColor = "#7FFFE1";
+            Erro2.style.display = "none";
+        }else{
+            email2.style.borderColor = "#FF8888";
+            Erro2.style.display = "block";
+        }
+        if(email2.value == ""){
+            email2.style.borderColor = "#7FFFE1";
+            Erro2.style.display = "none";
+        }
+    }
+
+    // 確認密碼
+    const CP1 = document.querySelector('.memCheckPswrd1_HC');
+    const CP2 = document.querySelector('.memCheckPswrd2_HC');
+    const passErro = document.querySelector('.memCheckErro_HC');
+    const passCheck = document.querySelector('.memRegisterBtn');
+    function checkPass(){
+        if(CP1.value != CP2.value){
+            passErro.style.display = "block";
+            CP1.style.borderColor = "#FF8888";
+            CP2.style.borderColor = "#FF8888";
+            
+        }
+        else{
+            passErro.style.display = "none";
+            CP1.style.borderColor = "#7FFFE1";
+            CP2.style.borderColor = "#7FFFE1";            
+        }
+    }
+
     // 登入註冊Tab切換
     function openClass(evt, className) {
         var i, x, memTablink_HCs;
@@ -331,7 +480,7 @@
         evt.currentTarget.classList.add("memActive_HC");
     }
     var mybtn = document.getElementsByClassName("memTestbtn_HC")[0];
-    mybtn.click();
+    mybtn.click();    
 
     // 會員登入-顯示隱藏密碼
     $(".memTogglePassword_HC").click(function () {
@@ -366,6 +515,31 @@
             input.attr("type", "password");
         }
     });
+
+    // 註冊成功
+    const Succ = document.querySelector('.memRegisterBtn');
+    const SuccBox = document.querySelector('.memSuccess_HC');
+    const noInput = document.querySelector('.memNoInput_HC');
+    const noCon = document.querySelector('input');
+    Succ.onclick = function(){
+        if(noCon.value == ""){
+            email2.style.borderColor = "#FF8888";
+            CP1.style.borderColor = "#FF8888";
+            CP2.style.borderColor = "#FF8888";
+            noInput.style.display = "block";
+        }else{
+            SuccBox.style.display = "block";
+        }
+    }
+
+    // const checkbox = document.querySelector('.memNotCheck_HC');
+    // Succ.onclick = function(){
+    //     if($(".memChecking_HC").attr('checked')){
+    //         SuccBox.style.display = "block";
+    //     }else{
+    //         checkBox.style.display = "block";
+    //     }
+    // }
 </script>
 
 </html>
