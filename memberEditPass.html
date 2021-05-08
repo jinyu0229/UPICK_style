@@ -190,6 +190,17 @@
             display: none;
         }
 
+        /* 錯誤提示 */
+        .memErroCSS_HC>i {
+            color: #FF8888;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .memCheckErro_HC{
+            display: none;
+        }
+
         /* 手機板 */
         @media screen and (max-width: 375px) {
             .container{
@@ -312,15 +323,18 @@
                         </div>
                         <div class="memColumnWhite_HC memNewPassword_HC">
                             <p>新密碼</p>
-                            <input id="memNewPassword_HC" type="password" placeholder="請輸入新密碼" name="password">
+                            <input onkeyup="checkPass()" id="memNewPassword_HC" type="password" placeholder="請輸入新密碼" name="password" class="memCheckPswrd1_HC">
                             <i toggle="#memNewPassword_HC"
                                 class="far fa-eye-slash memPassIcon_HC memToggleNewPassword_HC"></i>
                         </div>
                         <div class="memColumnWhite_HC memCheckPassword_HC">
                             <p>確認新密碼</p>
-                            <input id="memCheckPassword_HC" type="password" placeholder="請再次輸入新密碼" name="password">
+                            <input onkeyup="checkPass()" id="memCheckPassword_HC" type="password" placeholder="請再次輸入新密碼" name="password" class="memCheckPswrd2_HC">
                             <i toggle="#memCheckPassword_HC"
                                 class="far fa-eye-slash memPassIcon_HC memToggleCheckPassword_HC"></i>
+                        </div>
+                        <div class="memErroCSS_HC memCheckErro_HC">
+                            <i class="fas fa-exclamation-circle"> 密碼不符！</i>
                         </div>
                         <button class="wBtnNGr memEditPassBtnShare_HC">確認修改</button>
                     </form>
@@ -335,6 +349,23 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script>
+    // 確認密碼
+    const CP1 = document.querySelector('.memCheckPswrd1_HC');
+    const CP2 = document.querySelector('.memCheckPswrd2_HC');
+    const passErro = document.querySelector('.memCheckErro_HC');
+    function checkPass(){
+        if(CP1.value != CP2.value){
+            passErro.style.display = "block";
+            CP1.style.borderColor = "#FF8888";
+            CP2.style.borderColor = "#FF8888";
+        }
+        else{
+            passErro.style.display = "none";
+            CP1.style.borderColor = "#7FFFE1";
+            CP2.style.borderColor = "#7FFFE1";            
+        }
+    }
+
     // 隱藏顯示舊密碼
     $(".memToggleOldPassword_HC").click(function () {
         $(this).toggleClass("fa-eye fa-eye-slash");
