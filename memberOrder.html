@@ -189,6 +189,93 @@
         #memWebTable_HC>tbody>tr#memNoOder_HC>td>h3 {
             line-height: 500px;
         }
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* Table樣式 */
+            .memTableArea_HC{
+                margin-top: 60px;
+            }
+
+            .memDisplay_HC{
+                display: none;
+            }
+
+            th:nth-child(3) {
+                border-top-right-radius: 4px;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC{
+                display: block;
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+        }
     </style>
 </head>
 
@@ -214,6 +301,11 @@
             <!-- 右側內容 -->
             <div class="memRightCon">
                 <div class="memberTitle_HC">
+                    <div class="memBackBtn_HC">
+                        <a href="./memberCentre.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
                     <h1 class="memberTitleText_HC">查詢訂單</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
@@ -221,75 +313,77 @@
                     </div>
                 </div>
                 <!-- 訂單列表 -->
-                <table id="memWebTable_HC">
-                    <thead>
-                        <tr>
-                            <th class="memSerialNumTh_HC">訂單編號</th>
-                            <th>訂購日期</th>
-                            <th>訂單狀態</th>
-                            <th>運送狀態</th>
-                            <th>運送方式</th>
-                            <th>付款方式</th>
-                            <th>訂單總額</th>
-                            <th>取消訂單</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="memNoOder_HC">
-                            <td colspan="8">
-                                <h3>目前尚無訂單</h3>
-                            </td>
-                        </tr>
-                        <tr class="memOder_HC">
-                            <td class="memSerialNumTd_HC">
-                                <a href="./memberOderDetail.html">1006127192</a>
-                            </td>
-                            <td>
-                                <p>2021-05-01</p>
-                            </td>
-                            <td>
-                                <p>處理中</p>
-                            </td>
-                            <td>
-                                <p>-</p>
-                            </td>
-                            <td>
-                                <p>宅配</p>
-                            </td>
-                            <td>
-                                <p>宅配代收</p>
-                            </td>
-                            <td>
-                                <p>$24,798</p>
-                            </td>
-                            <td><a href="#">聯絡我們</a></td>
-                        </tr>
-                        <tr class="memOder_HC">
-                            <td class="memSerialNumTd_HC">
-                                <a href="./memberOderDetail.html">1006127086</a>
-                            </td>
-                            <td>
-                                <p>2021-01-27</p>
-                            </td>
-                            <td>
-                                <p>訂單完成</p>
-                            </td>
-                            <td>
-                                <p>已出貨</p>
-                            </td>
-                            <td>
-                                <p>到店取貨</p>
-                            </td>
-                            <td>
-                                <p>信用卡</p>
-                            </td>
-                            <td>
-                                <p>$13,452</p>
-                            </td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="memTableArea_HC">
+                    <table id="memWebTable_HC">
+                        <thead>
+                            <tr>
+                                <th class="memSerialNumTh_HC">訂單編號</th>
+                                <th>訂購日期</th>
+                                <th>訂單狀態</th>
+                                <th class="memDisplay_HC">運送狀態</th>
+                                <th class="memDisplay_HC">運送方式</th>
+                                <th class="memDisplay_HC">付款方式</th>
+                                <th class="memDisplay_HC">訂單總額</th>
+                                <th class="memDisplay_HC">取消訂單</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="memNoOder_HC">
+                                <td colspan="8">
+                                    <h3>目前尚無訂單</h3>
+                                </td>
+                            </tr>
+                            <tr class="memOder_HC">
+                                <td class="memSerialNumTd_HC">
+                                    <a href="./memberOderDetail.html">1006127192</a>
+                                </td>
+                                <td>
+                                    <p>2021-05-01</p>
+                                </td>
+                                <td>
+                                    <p>處理中</p>
+                                </td >
+                                <td class="memDisplay_HC">
+                                    <p>-</p>
+                                </td>
+                                <td class="memDisplay_HC">
+                                    <p>宅配</p>
+                                </td class="memDisplay_HC">
+                                <td class="memDisplay_HC">
+                                    <p>宅配代收</p>
+                                </td class="memDisplay_HC">
+                                <td class="memDisplay_HC">
+                                    <p>$24,798</p>
+                                </td>
+                                <td class="memDisplay_HC"><a href="#">聯絡我們</a></td>
+                            </tr>
+                            <tr class="memOder_HC">
+                                <td class="memSerialNumTd_HC">
+                                    <a href="./memberOderDetail.html">1006127086</a>
+                                </td>
+                                <td>
+                                    <p>2021-01-27</p>
+                                </td>
+                                <td>
+                                    <p>訂單完成</p>
+                                </td>
+                                <td class="memDisplay_HC">
+                                    <p>已出貨</p>
+                                </td>
+                                <td class="memDisplay_HC">
+                                    <p>到店取貨</p>
+                                </td>
+                                <td class="memDisplay_HC">
+                                    <p>信用卡</p>
+                                </td>
+                                <td class="memDisplay_HC">
+                                    <p>$13,452</p>
+                                </td class="memDisplay_HC">
+                                <td class="memDisplay_HC">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <!-- 分頁 -->
                 <div class="memPagenation_HC">
                     <div class="wWhitePgAreaHTML1">
