@@ -236,6 +236,119 @@
             color: #FFF;
             text-decoration: none;
         }
+
+        .memMobileFollowArea_HC{
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC{
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC{
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC{
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1{
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC{
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC{
+                display: none;
+            }
+
+            /* 隱藏網頁追蹤清單 */
+            .memWebFollowArea_HC{
+                display: none;
+            }
+
+            /* 追蹤清單樣式 */
+            .memMobileFollowArea_HC{
+                display: block;
+                padding-top: 60px;
+            }
+
+            .memMbFollowCardArea_HC{
+                display: flex;
+                background-color: #FFF;
+                padding: 10px;
+                border-radius: 4px;
+                box-shadow: 3px 3px 10px #E4E8EE;
+                align-items: center;
+            }
+            .memMbFollowCardArea_HC>img{
+                width: 90px;
+                height: 90px;
+                margin-right: 10px;
+            }
+
+            .memMbFollowCardCon_HC>a{
+                height: 60px;
+                font-size: 13px;
+                color: #383E44;
+                text-decoration: underline;
+            }
+
+            .memMbFollowCardDown_HC{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .memMbFollowCardDown_HC>a{
+                color: #383E44;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC{
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC{
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i{
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+        }
     </style>
 </head>
 
@@ -261,97 +374,124 @@
             <!-- 右側內容 -->
             <div class="memRightCon">
                 <div class="memberTitle_HC">
+                    <div class="memBackBtn_HC">
+                        <a href="./memberCentre.html">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
                     <h1 class="memberTitleText_HC">追蹤清單</h1>
                     <div class="memSquareBox_HC">
                         <div class="memSquare01_HC"></div>
                         <div class="memSquare02_HC"></div>
                     </div>
-
                 </div>
-                <!-- 追蹤清單 -->
-                <table id="memWebTable_HC">
-                    <thead>
-                        <tr>
-                            <th class="memProductTh_HC">追蹤商品</th>
-                            <th>庫存狀態</th>
-                            <th>商品價格</th>
-                            <th>購買狀態</th>
-                            <th class="memTrashTh_HC"><i class="fas fa-trash"></i></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="memNoFollow_HC">
-                            <td colspan="5">
-                                <h3>目前尚無追蹤商品</h3>
-                            </td>
-                        </tr>
-                        <tr class="memFollow_HC">
-                            <td class="memProductTd_HC">
-                                <img src="./img/Antec安鈦克01.jpg" alt="">
-                                <a href="./memberFollowDetail.html">
-                                    Antec 安鈦克 NE550 TUF聯名款 550W 80+銅牌
-                                    (全日系電容/長140mm/五年保固二年換新)
-                                </a>
-                            </td>
-                            <td>
+                <!-- 網頁追蹤清單 -->
+                <div class="memWebFollowArea_HC">
+                    <table id="memWebTable_HC">
+                        <thead>
+                            <tr>
+                                <th class="memProductTh_HC">追蹤商品</th>
+                                <th>庫存狀態</th>
+                                <th>商品價格</th>
+                                <th>購買狀態</th>
+                                <th class="memTrashTh_HC"><i class="fas fa-trash"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="memNoFollow_HC">
+                                <td colspan="5">
+                                    <h3>目前尚無追蹤商品</h3>
+                                </td>
+                            </tr>
+                            <tr class="memFollow_HC">
+                                <td class="memProductTd_HC">
+                                    <img src="./img/Antec安鈦克01.jpg" alt="">
+                                    <a href="./memberFollowDetail.html">
+                                        Antec 安鈦克 NE550 TUF聯名款 550W 80+銅牌
+                                        (全日系電容/長140mm/五年保固二年換新)
+                                    </a>
+                                </td>
+                                <td>
+                                    <p>貨量充足</p>
+                                </td>
+                                <td>
+                                    <p>$2,029</p>
+                                </td>
+                                <td class="">
+                                    <a href="">加入購物車</a>
+                                    <br>
+                                    <a href="">立即購買</a>
+                                </td>
+                                <td>
+                                    <a href="">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+
+                        </tbody>
+                    </table>
+                    <!-- 分頁 -->
+                    <div class="memPagenation_HC">
+                        <div class="wWhitePgAreaHTML1">
+                            <ul class="wWhitePgArea">
+                                <!--最前頁button-->
+                                <li class="wWhitePgItem">
+                                    <a class="wWhitePgLink" href="#">
+                                        <i class="fas fa-angle-double-left"></i>
+                                    </a>
+                                </li>
+                                <!--前一頁button-->
+                                <li class="wWhitePgItem">
+                                    <a class="wWhitePgLink" href="#">
+                                        <i class="fas fa-angle-left"></i>
+                                    </a>
+                                </li>
+                                <!--橫向顯示頁碼-->
+                                <li class="wWhitePgItem wWhitePGnumber">
+                                    <a class="wWhitePgLink" href="#">1</a>
+                                </li>
+                                <li class="wWhitePgItem wWhitePGnumber">
+                                    <a class="wWhitePgLink" href="#">2</a>
+                                </li>
+                                <li class="wWhitePgItem wWhitePGnumber">
+                                    <a class="wWhitePgLink" href="#">3</a>
+                                </li>
+                                <!--橫向顯示頁碼終止-->
+                                <!--下一頁button-->
+                                <li class="wWhitePgItem">
+                                    <a class="wWhitePgLink" href="#">
+                                        <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </li>
+                                <!--最後一頁button-->
+                                <li class="wWhitePgItem">
+                                    <a class="wWhitePgLink" href="#">
+                                        <i class="fas fa-angle-double-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 手機追蹤清單 -->
+                <div class="memMobileFollowArea_HC">
+                    <div class="memMbFollowCardArea_HC">
+                        <img src="./img/Antec安鈦克01.jpg" alt="">
+                        <div class="memMbFollowCardCon_HC">
+                            <a href="./memberFollowDetail.html">
+                                Antec 安鈦克 NE550 TUF聯名款 550W 80+銅牌 (全日系電容/長140mm/五年保固二年換新)
+                            </a>
+                            <div class="memMbFollowCardDown_HC">
                                 <p>貨量充足</p>
-                            </td>
-                            <td>
                                 <p>$2,029</p>
-                            </td>
-                            <td class="">
-                                <a href="">加入購物車</a>
-                                <br>
-                                <a href="">立即購買</a>
-                            </td>
-                            <td>
+                                <a href="">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
                                 <a href="">
                                     <i class="fas fa-trash"></i>
                                 </a>
-                            </td>
-
-                    </tbody>
-                </table>
-                <!-- 分頁 -->
-                <div class="memPagenation_HC">
-                    <div class="wWhitePgAreaHTML1">
-                        <ul class="wWhitePgArea">
-                            <!--最前頁button-->
-                            <li class="wWhitePgItem">
-                                <a class="wWhitePgLink" href="#">
-                                    <i class="fas fa-angle-double-left"></i>
-                                </a>
-                            </li>
-                            <!--前一頁button-->
-                            <li class="wWhitePgItem">
-                                <a class="wWhitePgLink" href="#">
-                                    <i class="fas fa-angle-left"></i>
-                                </a>
-                            </li>
-                            <!--橫向顯示頁碼-->
-                            <li class="wWhitePgItem wWhitePGnumber">
-                                <a class="wWhitePgLink" href="#">1</a>
-                            </li>
-                            <li class="wWhitePgItem wWhitePGnumber">
-                                <a class="wWhitePgLink" href="#">2</a>
-                            </li>
-                            <li class="wWhitePgItem wWhitePGnumber">
-                                <a class="wWhitePgLink" href="#">3</a>
-                            </li>
-                            <!--橫向顯示頁碼終止-->
-                            <!--下一頁button-->
-                            <li class="wWhitePgItem">
-                                <a class="wWhitePgLink" href="#">
-                                    <i class="fas fa-angle-right"></i>
-                                </a>
-                            </li>
-                            <!--最後一頁button-->
-                            <li class="wWhitePgItem">
-                                <a class="wWhitePgLink" href="#">
-                                    <i class="fas fa-angle-double-right"></i>
-                                </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
