@@ -50,7 +50,7 @@
         .memForgetCon_HC>p {
             clear: both;
             color: #7FFFE1;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
         }
 
@@ -94,16 +94,25 @@
         }
 
         /* 錯誤提示 */
-        span {
+        .memErroCSS_HC>i,p {
             color: #FF8888;
             font-size: 12px;
             display: block;
             margin-bottom: 5px;
         }
 
-        span>i {
+        .memCheckErro_HC{
+            display: none;
+        }
+
+        .memErroCSS_HC>i {
             font-size: 12px;
             margin-right: 5px;
+        }
+
+        /* 帳號格式錯誤 */
+        .memErroEmail_HC{
+            display: none;
         }
 
         /* 註冊成功彈跳窗樣式 */
@@ -125,6 +134,39 @@
             margin-top: 0;
             margin-bottom: 20px;
         }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container{
+                width: 355px;
+                margin: 0 auto;
+            }
+            
+            #memForget_HC {
+                width: 300px;
+                height: 250px;
+                margin: 0 auto;
+                margin-top: 150px;
+            }
+
+            /* 輸入框標題 */
+            .memForgetCon_HC>p{
+                font-size: 14px;
+            }
+
+            /* 註冊成功彈跳窗樣式 */
+            .windowShare_HC{
+                width: 320px;
+            }
+            .wWinDarkClo {
+                margin-left: 88%;
+                margin-top: 5px;
+            }
+            .wSucceDarkTick {
+                line-height: 0;
+                height: 60px;
+            }
+        }
     </style>
 
 </head>
@@ -138,22 +180,50 @@
             </div>
             <div class="memForgetCon_HC">
                 <p>信箱</p>
-                <input type="text" placeholder="請輸入信箱">
-                <span><i class="fas fa-exclamation-circle"></i>信箱格式不正確！</span>
-                <button class="wBtnNGr memBtnShare_HC">寄送</button>
+                <input onkeyup="check()" type="text" placeholder="請輸入信箱" class="memEmailCheck_HC">
+                <div class="memErroCSS_HC memErroEmail_HC">
+                    <i class="fas fa-exclamation-circle"> 信箱格式不正確！</i>
+                </div>
+                <button class="wBtnNGr memBtnShare_HC memSendBtn">寄送</button>
             </div>
-            <!-- 寄送成功彈跳窗 -->
-            <div class="wSucceDark windowShare_HC">
-                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
-                <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
-                <h4>寄送成功！<br>請至信箱收取重設密碼信件</h4>
-            </div>
+        </div>
+        <!-- 寄送成功彈跳窗 -->
+        <div class="wSucceDark windowShare_HC">
+            <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+            <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
+            <h4>寄送成功！<br>請至信箱收取重設密碼信件</h4>
         </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script>
-
+    const email = document.querySelector('.memEmailCheck_HC');
+    const Erro = document.querySelector('.memErroEmail_HC');
+    const checkBtn = document.querySelector('.memSendBtn');
+    let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    function check(){
+        if(email.value.match(regExp)){
+            email.style.borderColor = "#7FFFE1";
+            Erro.style.display = "none";
+        }else{
+            email.style.borderColor = "#FF8888";
+            Erro.style.display = "block";
+        }
+        if(email.value == ""){
+            email.style.borderColor = "#7FFFE1";
+            Erro.style.display = "none";
+        }
+    }
+    checkBtn.onclick = function(){
+        if(email.value.match(regExp)){
+            passErro.style.display = "block";
+            CP1.style.borderColor = "#FF8888";
+            CP2.style.borderColor = "#FF8888";
+        }
+        else{
+            passErro.style.display = "none";
+        }
+    }
 </script>
 
 </html>
